@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Message Form</title>
+</head>
+<body>
+<form action="#" th:action="@{/process}" th:object="${message}" method="post">
+
+    <input type="hidden" th:field="*{id}"/>
+    Title:
+    <input type="text" th:field="*{title}" />
+    <span th:if="${#fields.hasErrors('title')}"
+          th:errors="*{title}"></span>
+
+    Content:
+    <textarea rows="4" th:field="*{content}" />
+    <span th:if="${#fields.hasErrors('content')}"
+          th:errors="*{content}"></span>
+
+<!--change posted type to number-->
+    Date Posted:
+    <input type="text" th:field="*{postedDate}" />
+    <span th:if="${#fields.hasErrors('postedDate')}"
+          th:errors="*{postedDate}"></span>
+
+    Posted By:
+    <input type="text" th:field="*{postedBy}" />
+    <span th:if="${#fields.hasErrors('postedBy')}"
+          th:errors="*{postedBy}"></span>
+<!--button to upload images would go here-->
+    <input type="submit" value="Submit" />
+</form>
+</body>
+</html>
