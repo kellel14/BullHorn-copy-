@@ -3,33 +3,75 @@
 <head>
     <meta charset="UTF-8">
     <title>Message Form</title>
+    <!--my navbar-->
+    <nav th:replace="base :: navbar"></nav>
+    <!--bootstrap links-->
+    <div th:replace="base :: bootstrap-css"></div>
+
+    <link rel="stylesheet" type="text/css" href="css/StyleForm.css"/>
+
+
 </head>
+
 <body>
-<form action="#" th:action="@{/process}" th:object="${message}" method="post">
+<!--my navbar-->
+<!--<nav th:replace="base :: navbar"></nav>-->
 
-    <input type="hidden" th:field="*{id}"/>
-    Title:
-    <input type="text" th:field="*{title}" />
-    <span th:if="${#fields.hasErrors('title')}"
-          th:errors="*{title}"></span>
 
-    Content:
-    <textarea rows="4" th:field="*{content}" />
-    <span th:if="${#fields.hasErrors('content')}"
-          th:errors="*{content}"></span>
+<!--cardwill begin here-->
 
-<!--change posted type to number-->
-    Date Posted:
-    <input type="text" th:field="*{postedDate}" />
-    <span th:if="${#fields.hasErrors('postedDate')}"
-          th:errors="*{postedDate}"></span>
 
-    Posted By:
-    <input type="text" th:field="*{postedBy}" />
-    <span th:if="${#fields.hasErrors('postedBy')}"
-          th:errors="*{postedBy}"></span>
-<!--button to upload images would go here-->
-    <input type="submit" value="Submit" />
-</form>
+<div class="container">
+    <form th:action="@{/process}"
+          th:object="${message}"
+          method="post">
+
+
+        <div class="row">
+            <div class="col-25">
+                <label for="fname">Title: </label>
+            </div>
+            <div class="col-75">
+                <input type="text" id="fname" name="firstname" placeholder="Your title..">
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-25">
+                <label for="lname">Posted By:</label>
+            </div>
+            <div class="col-75">
+                <input type="text" id="lname" name="lastname" placeholder="Your name..">
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-25">
+                <label for="country">Posted Date</label>
+            </div>
+            <div class="col-75">
+                <select id="country" name="country">
+                    <option value="australia">Australia</option>
+                    <option value="canada">Canada</option>
+                    <option value="usa">USA</option>
+                </select>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-25">
+                <label for="subject">Content</label>
+            </div>
+            <div class="col-75">
+                <textarea id="subject" name="subject" placeholder="Write something.." style="height:200px"></textarea>
+            </div>
+        </div>
+        <div class="row">
+            <input type="submit" value="Submit">
+        </div>
+    </form>
+</div>
+
+<!--msg card will end here-->
+
+<!--js links-->
+<div th:replace="base :: javascript-link"></div>
 </body>
 </html>

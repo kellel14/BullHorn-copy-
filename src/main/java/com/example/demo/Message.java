@@ -15,7 +15,7 @@ public class Message {
     private long id;
 
     @NotNull
-    @Size(min=4)
+    @Size(min=0)
     private String title;
 
     @NotNull
@@ -34,15 +34,15 @@ public class Message {
     @Size(min=3)
     private String postedBy;
 
-    public Message(@NotNull @Size(min = 4) String title,
-                   @NotNull @Size(min = 3) String content,
-                   @NotNull @Size(min = 3) String postedDate,
-                   @NotNull @Size(min = 3) String postedBy) {
-        this.title = title;
-        this.content = content;
-        this.postedDate = postedDate;
-        this.postedBy = postedBy;
-    }
+//    public Message(@NotNull @Size(min = 4) String title,
+//                   @NotNull @Size(min = 3) String content,
+//                   @NotNull @Size(min = 3) String postedDate,
+//                   @NotNull @Size(min = 3) String postedBy) {
+//        this.title = title;
+//        this.content = content;
+//        this.postedDate = postedDate;
+//        this.postedBy = postedBy;
+//    }
 
     public Message() {
     }

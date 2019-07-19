@@ -3,22 +3,50 @@
 <head>
     <meta charset="UTF-8">
     <title>Show Message</title>
+
+    <!--my navbar-->
+    <nav th:replace="base :: navbar"></nav>
+    <!--bootstrap links-->
+    <div th:replace="base :: bootstrap-css"></div>
+    <link rel="stylesheet" type="text/css" href="css/StyleShow.css"/>
+
+
 </head>
+
 <body>
-<a href="/">Show All Messages</a><br />
-<a href="/add">New Message</a>
+<!--my navbar-->
+<!--<nav th:replace="base :: navbar"></nav>-->
 
-    Title:
-    <span th:text="${message.title}"></span> <br/>
-    Content:
-    <!--possibly change span to p-->
-    <span th:text="${message.content}"></span><br/>
-    Date Posted:
-    <span th:text="${message.postedDate}"></span> <br/>
-    Posted By:
-    <span th:text="${message.postedBy}"></span> <br/>
+<!--card will begin here-->
 
-<a th:href="@{/delete/{id}(id=${message.id})}">Delete Message</a>
+<br/>
+<div class="blog-card spring-fever">
+    <div class="title-content">
+        <h3><a href="#">10 inspiring photos</a></h3>
+        <div class="intro"> <a href="#">Inspiration</a> </div>
+    </div>
+    <div class="card-info">
+        Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim...
+        <a href="#">Read Article<span class="licon icon-arr icon-black"></span></a>
+    </div>
+    <div class="utility-info">
+        <ul class="utility-list">
+            <li><span class="licon icon-like"></span><a href="#">2</a></li>
+            <li><span class="licon icon-com"></span><a href="#">12</a></li>
+            <li><span class="licon icon-dat"></span>03 jun 2017</li>
+            <li><span class="licon icon-tag"></span><a href="#">Photos</a>, <a href="#">Nice</a></li>
+        </ul>
+    </div>
+    <div class="gradient-overlay"></div>
+    <div class="color-overlay"></div>
+</div><!-- /.blog-card -->
 
+
+
+<!--msg card will end here-->
+
+<!--js links-->
+<div th:replace="base :: javascript-link"></div>
+</div>
 </body>
 </html>
